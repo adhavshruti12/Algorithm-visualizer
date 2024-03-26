@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Visualization</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black ;
+    
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color:black;
+}
+
+        .queue-container {
+           
+            align-items: center;
+            margin-top: 100px;
+        }
+        header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.title {
+    color: white;
+    font-size: 40px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00FF00;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 5px;
+    
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+        .queue {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            border: 2px solid #fff;
+            padding: 10px;
+            margin-right: 20px;
+            color: #fff;
+        }
+      
+        .queue-item {
+            width: 40px;
+            height: 60px;
+            background-color: #3498db;
+            color:#fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: row;
+            padding: 14px;
+        }
+        .controls1{
+            padding: 14px;
+        }
+        button {
+    width: 150px;
+    font-size: 25px;
+    background-color: #00FF00;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    font-weight: bold;
+}
+        
+        .queue-controls {
+            display: flex;
+            align-items: left;
+            gap: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        
+        <h1 class="title">Queue Visualizer</h1>
+    </header>
+  <div class="container1">
+    <a href="/home" class="button">Home</a>
+    <a href="/about" class="button">About Us</a>
+    <a href="/contact" class="button">Contact Us</a>
+    </div>
+    <div class="queue-container">
+        <div>
+            <div class="queue" id="queue">
+                <!-- Queue items will be dynamically added here -->
+            </div>
+       
+        <div class="controls">
+            <button onclick="enqueue()">Enqueue</button>
+            <button onclick="dequeue()">Dequeue</button>
+            <button onclick="resetQueue()">Reset</button>
+        </div>
+
+    
+      </div>
+
+
+    <script>
+        function visualizeQueue(queue) {
+            const queueContainer = document.getElementById('queue');
+            queueContainer.innerHTML = '';
+
+            for (const item of queue) {
+                const queueItem = document.createElement('div');
+                queueItem.classList.add('queue-item');
+                queueItem.textContent = item;
+                queueContainer.appendChild(queueItem);
+            }
+        }
+
+        const queue = [];
+
+        function enqueue() {
+            const newItem = prompt('Enter item to enqueue:');
+            if (newItem !== null) {
+                queue.unshift(newItem);
+                visualizeQueue(queue);
+            }
+        }
+
+        function dequeue() {
+            if (queue.length === 0) {
+                alert('Queue is empty!');
+            } else {
+                const removedItem = queue.pop();
+                alert(`Dequeued item: ${removedItem}`);
+                visualizeQueue(queue);
+            }
+        }
+
+            function resetQueue() {
+            queue.length = 0; // Clear the array
+            visualizeQueue(queue);
+        }
+    
+    </script>
+  
+</body>
+</html>

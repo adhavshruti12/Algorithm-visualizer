@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+
+
+
+<style>
+/* config.css */
+
+:root {
+  --baseColor: #606468;
+}
+
+/* helpers/align.css */
+
+.align {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  place-items: center;
+}
+
+.grid {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20rem;
+}
+
+/* helpers/hidden.css */
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* helpers/icon.css */
+
+:root {
+  --iconFill: var(--baseColor);
+}
+
+.icons {
+  display: none;
+}
+
+.icon {
+  height: 1em;
+  display: inline-block;
+  fill: #606468;
+  fill: var(--iconFill);
+  width: 1em;
+  vertical-align: middle;
+}
+
+/* layout/base.css */
+
+:root {
+  --htmlFontSize: 100%;
+
+  --bodyBackgroundColor: #000;
+  --bodyColor: var(--baseColor);
+  --bodyFontFamily: "Open Sans";
+  --bodyFontFamilyFallback: sans-serif;
+  --bodyFontSize: 0.875rem;
+  --bodyFontWeight: 400;
+  --bodyLineHeight: 1.5;
+}
+
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+    cursor: pointer;
+  font-size: var(--htmlFontSize);
+}
+
+body {
+  background-color: #2c3338;
+  background-color: var(--bodyBackgroundColor);
+  color: #606468;
+  color: var(--bodyColor);
+  font-family: "Open Sans", sans-serif;
+  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
+  font-size: 0.875rem;
+  font-size: var(--bodyFontSize);
+  font-weight: 400;
+  font-weight: var(--bodyFontWeight);
+  line-height: 1.5;
+  line-height: var(--bodyLineHeight);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* modules/anchor.css */
+
+:root {
+  --anchorColor: #eee;
+}
+
+a {
+  color: #eee;
+  color: var(--anchorColor);
+  outline: 0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+
+/* modules/form.css */
+
+:root {
+  --formGap: 0.875rem;
+}
+
+input {
+  background-image: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"] {
+  cursor: wait;
+}
+
+.form {
+  display: grid;
+  grid-gap: 0.875rem;
+  gap: 0.875rem;
+  grid-gap: var(--formGap);
+  gap: var(--formGap);
+}
+
+.form input[type="password"],
+.form input[type="text"],
+.form input[type="submit"] {
+  width: 100%;
+}
+
+.form__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* modules/login.css */
+
+:root {
+  --loginBorderRadus: 0.25rem;
+  --loginColor: #eee;
+
+  --loginInputBackgroundColor: #3b4148;
+  --loginInputHoverBackgroundColor: #434a52;
+
+  --loginLabelBackgroundColor: #363b41;
+
+  --loginSubmitBackgroundColor: green;
+  --loginSubmitColor: #eee;
+  --loginSubmitHoverBackgroundColor: #d44179;
+}
+
+.login {
+  color: #eee;
+  color: var(--loginColor);
+}
+
+.login label,
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="submit"] {
+  border-radius: 0.25rem;
+  border-radius: var(--loginBorderRadus);
+  padding: 1rem;
+}
+
+.login label {
+  background-color: #363b41;
+  background-color: var(--loginLabelBackgroundColor);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.login input[type="password"],
+.login input[type="text"] {
+  background-color: #3b4148;
+  background-color: var(--loginInputBackgroundColor);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.login input[type="password"]:focus,
+.login input[type="password"]:hover,
+.login input[type="text"]:focus,
+.login input[type="text"]:hover {
+  background-color: #434a52;
+  background-color: var(--loginInputHoverBackgroundColor);
+}
+
+.login input[type="submit"] {
+  background-color: #ea4c88;
+  background-color: var(--loginSubmitBackgroundColor);
+  color: #eee;
+  color: var(--loginSubmitColor);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.login input[type="submit"]:focus,
+.login input[type="submit"]:hover {
+  background-color: #d44179;
+  background-color: var(--loginSubmitHoverBackgroundColor);
+}
+
+/* modules/text.css */
+
+p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.text--center {
+  text-align: center;
+}
+ 
+
+
+/* Login Heading style */
+
+p {
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  background: green;
+  -webkit-background-clip: text;
+  background-size: contain;
+  width: 100%;
+  text-align: center;
+  color: transparent;
+  font-weight: 900;
+}
+h1::before {
+  content: attr(data-heading);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  mix-blend-mode: screen;
+  -webkit-animation: shine 1s infinite;
+          animation: shine 1s infinite;
+  background-size: 200%;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), -2px 2px 10px rgba(0, 0, 0, 0.2), -2px -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+ 
+h1 {
+  top: 20%;
+  left: 50%;
+  border: none;
+  pointer-events:none;
+
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 30px;
+  margin: 0;
+  font-family: "frozen", serif;  /* frozen text text font */
+  font-weight: 700;
+}
+
+
+/* Sign-up button */
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: black;
+  transform: translateY(-7px);
+}
+
+ 
+ 
+.bo_b {
+  border-bottom: 1px solid #9da64d;
+  display: block;
+  height: 26px;
+}
+
+</style>
+
+
+<script>
+// JS is to make the text editable for demo purpose, not required for the effect. Thanks for the suggestion @chriscoyier! 
+var h1 = document.querySelector("h1");
+
+h1.addEventListener("input", function() {
+    this.setAttribute("data-heading", this.innerText);
+});
+</script>
+
+</head>
+<body>
+
+<!-- partial:index.partial.html -->
+<h1 contenteditable data-heading="L O G I N">
+	L O G I N
+</h1>
+ 
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+
+ <br>
+ <body class="align">
+
+  <div class="grid">
+
+    <form action="/login" method="post" class="form login">
+
+      <div class="form__field">
+        <label for="username"><img width="20" height="20" src="https://img.icons8.com/ios-filled/100/user-male-circle.png" alt="user-male-circle"/><span class="hidden">Username</span></label>
+       
+       <input autocomplete="username" id="login_username" type="text" name="username" class="form_input" placeholder="Username" required>
+      </div>
+
+      <div class="form__field">
+        <label for="psw"><img width="20" height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABoCAYAAAAdHLWhAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE4ElEQVR4nO2dX4hXRRTHPypCqVvtioH/qIyCVCwM6UnKpaDCkjQJevWltBRJEMWH6kkfSnyJ1noyKuohIcqCICohgoJIozJRAsGnskzFTXedGJhFiPzd38zde8+5M+cLB5bf72G/53zmzp07997zg/w1AKwGdgBvAd8BJ4AzwD8hzoTP/HdvA7uANcBN0uZz1VxgO3AYuAy4xBgDvgnAFkonlYNWAh8Al2pA6QXrEPCgdJJd1D3Axw1AuVZ8DtwnnXQXNB14MYxu13JcAUaAmdJF0KrFwBEBMP+Nn4El0sXQplXAnwrgTMTfwMPSRdGi9WFp7JSF97SWwrUKGFUAoxekhyhUy4CzCiBUxV/AXRSmGcBPCorfbxwFrqMgjSgoemy8SkG7A65m+Oukz4CdYbV1BzAITAvh/7497BJsAz6ahHPdWLiAzlpTwwZmapEuAHuABQn/e3bYYP2jxv//gsz1dI3i+I3SWyfBwxzgYA0ffic9W32fWJQDYRtosjQF2J3o5Usy1XBiQd4LU2MT2pfoaQUZ6l2Fy1u/oPgqwZdfhWZ33XM+YdV0dwvebgMuRnr7fZKnXHE9qXyU7knw9ygZ6Y2Eo2dRi/5uTjiK9pKRjkcmf1DA4zuRHn8gE81PmD6eEvC5JuEO7BAZ6JHIxC+FR6va1vUJ20EPkIG2RSb9taDXw5FenyMDvdmhk+8rkV5fIwN9Gpn0BkGvGyK9fkiB+2/Dgl7vj/T6LRnodGTSywW93hnp9RQZKPZxqkWCXocivfp7S51X7BX6oPCeYewNxM7rSmTS0wS9To30Ok4GcpEhra75LS5h1zG/xSXsOua3uIRdx/yaTCaTydQJLQz3SD4JrxLGPsnjOhjnQ64+502JjyW3clt7pGYPA5dJ+N2F94FbUKLHwzud0oVxysLX5DFpOM+HESNdDKc0xkONxB4Gkehn4DoIyc8yrZ9zbFqjb0i+VvM0PwhiAfvbXErb1Eb0oLvc1hLcn/TsiCCpBv46qXH5Fl4GiKQa+A5ejetXA0TqAP2lDUDnDBCpgHztGpdNb9SqgQFC9yAyQMhDMEDIF9oAIV9MA4R8wQyQgqI4RWGLBOQhGCCuFsG3ct4SWinPDLEkfHZUAZBij6BR4NmKRkv+u43KugoXAWg0dAzuV8OKIDUupyCeSfC9SYHvIgAdSewf518M+1GB/8YlneDmGt63KvDfuKQTXFzD+1IF/huXdIKzangfUOC/cUknONjiW9wGiPgi3FsDkJ8eDVDDRXihxc5bdgQRX4TfEnsp+KX5SQPUzijcmQBol4Kjx0fjcgpiLLSw7FdPKHoLo3E5JTEOvNSH35cVwSkKkOszYWl/BqhC0kAMUIWkgRigCkkDMUAVkgZigCokDcQAVUgaiAGqkDQQA1QhaSDFAxroAedGBUCKB7S2B6B1CoAUD+jYNX7HZ0jp+7SNyymMU8B64IYQ65TCKRaQ61AYIOQhGCDkC22AkC9mJwFZGzKS4ZxtA9AxBaPQdTR889nGZc2U0N1MSct7Nq6D4d8IbFy+KZ019ENvQ7+UH0+3gNdpUb5Bqq3miFq9zaVlWVtm+oIzLtng3Bqbo7ex+YT86LDpjv+d1lajRHOAffbjGkwcNQckzjn9aEG4TjoUrppL6G96LuTqL0J9V5OeS+l/AVJCQryVA9KnAAAAAElFTkSuQmCC" alt="private2"/><span class="hidden">Password</span></label>
+          
+        <input id="login_password" type="password" name="password" class="form_input" placeholder="Password" required>
+      </div>
+
+      <div class="form__field">
+        <input type="submit" value="Sign In">
+      </div>
+
+    </form>
+    
+<br>
+
+
+    <p class="text--center">Not a register yet?  
+    <br>
+    <a href="/registration"><div class="wrap">
+  <button class="button">Sign Up <svg class="icon">
+    
+        <use xlink:href="#icon-arrow-right"></use>
+      </svg></button>
+</div></a> </p>
+
+  </div>
+
+  <a href="/forgot"><div class="bo_b">
+    <p>Forgot Password</p>
+  </div></a>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="icons">
+    <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
+      <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
+    </symbol>
+   
+    
+  </svg>
+
+</body>
+<!-- partial -->
+  
+</body>
+</html>

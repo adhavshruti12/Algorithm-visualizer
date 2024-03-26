@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+</head>
+<style>
+
+
+:root {
+
+  --bodyColor: var(--baseColor);
+  --bodyFontFamily: "Open Sans";
+  --bodyFontFamilyFallback: sans-serif;
+  }
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+h4 {
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+body,
+html {
+  min-width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+
+}
+
+html {
+  background-image: url();
+  background: #000;
+  background-attachment: fixed;
+  background-position: center right;
+}
+
+.box > .content {
+  width: 550px;
+  position: absolute;
+  right: calc(10% + 50px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tagbox {
+  width: 280px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  background: #404040;
+  overflow: hidden;
+}
+
+.tagbox h2 {
+  font-size: 18px;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.tagbox > .tag {
+  color: #fff;
+  font-weight: 300;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 50%;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background: #6e7532;
+}
+
+.tagafter {
+  position: abolute;
+  width: 50%;
+  background: #24ad15ed;
+  overflow: hidden;
+}
+
+#signup,
+#signin {
+  width: 50%;
+  height: 50px;
+  display: block;
+  z-index: 1;
+}
+
+.signup,
+.signin {
+  width: 450px;
+  
+}
+
+.signin {
+  display: none;
+}
+
+.input {
+  margin-top: 13%;
+}
+
+input::-webkit-input-placeholder {
+  color: #a0a0a0;
+}
+
+.input > input,
+.submit > input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-top: 10px;
+  
+  font-family: "Open Sans", sans-serif;
+  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input:focus {
+  outline: 0;
+  border-bottom: 1px solid white;
+}
+ 
+.tran {
+  opacity: 0.2;
+}
+
+.bo_b {
+  border-bottom: 1px solid #9da64d;
+  display: block;
+  height: 26px;
+}
+
+.submit {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.submit > button {
+  width: 150px;
+  height: 40px;
+  background: #24ad15ed;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.submit > button:hover {
+  background: #282828;
+  cursor: wait;
+}
+
+.submit > a > p {
+  margin: 20px;
+  color: #fff;
+  opacity: 0.2;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-bottom: 1px solid #9da64d;
+  padding-bottom: 5px;
+}
+
+.submit > a > p:hover {
+  opacity: 1;
+}
+
+@media (min-width: 520px) and (max-width: 1024px) {
+  .box > .content {
+    left: 50%;
+    transform: translateX(-40%) translateY(-50%);
+  }
+}
+@media (max-width: 519px) {
+  .box > .content {
+    width: 100%;
+    margin-top: 20%;
+    position: static;
+    transform: translateY(15%);
+  }
+
+  .signup,
+.signin {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .input > input,
+.submit > input {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .submit > a p {
+    margin: 30px auto;
+  }
+
+  .tagbox {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .agree {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .agree p {
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin: -3px 5px;
+  }
+
+  .submit {
+    display: block;
+    width: 90%;
+    margin: 50px auto;
+  }
+
+  .submit > input {
+    width: 100%;
+  }
+
+  .submit > a p {
+    width: 50%;
+    text-align: center;
+  }
+}
+.fix-box-blur {
+  border-radius: 25px;
+  width: 100%;
+  max-width: 600px;
+  position: fixed;
+  top: 80px;
+  padding: 25px;
+  left: 50%;
+  background: url(https://images.unsplash.com/photo-1575118025180-4ce92e17a9e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80) no-repeat center center fixed;
+  background-size: auto;
+  opacity: 0.9;
+  transform: translateX(-50%);
+  filter: blur(13px);
+  display: none;
+  overflow: hidden;
+}
+
+.fix-box {
+  color: #fff;
+  border-radius: 25px;
+  padding: 25px;
+  width: 100%;
+  max-width: 600px;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(240, 240, 240, 0.3);
+  display: none;
+}
+.fix-box .title {
+  display: flex;
+  justify-content: space-between;
+}
+.fix-box .title h2 {
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+.fix-box .title h2.close {
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.4s ease;
+}
+.fix-box .title h2.close:hover {
+  opacity: 1;
+}
+.fix-box p {
+  font-weight: 400;
+  line-height: 24px;
+  font-family: serif;
+  margin-top: 10px;
+}
+
+.service {
+  position: relative;
+}
+.agree {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.agree > input {
+  width: 15px;
+  height: 15px;
+}
+
+.agree > input[type=checkbox]:after {
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  content: " ";
+  background-color: #9da64d;
+  color: #fff;
+  display: inline-block;
+  visibility: visible;
+  cursor: pointer;
+}
+ 
+
+.agree p {
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin: -3px 10px;
+}
+
+
+
+.open-box {
+  display: block;
+}
+
+.close-box .open {
+  display: none;
+}
+
+.password .cont form.forget .input {
+  height: 0px;
+  margin-top: 0;
+  margin-bottom: 80px;
+  width: 90%;
+}
+.password .cont form.forget .input:first-child {
+  margin-top: 20px;
+}
+.password .cont form.forget .agree p.tran {
+  margin-left: 15px;
+  margin-top: -2px;
+  opacity: 0.5;
+}
+
+
+ 
+.blurred-bg {
+  background-image: url(" ");
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  font-size: 17px;
+  background-attachment: fixed;
+}
+.blurred-bg.tinted {
+font-family: fantasy;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjEuMCIgeDI9IjAuNSIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4yIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url("https://lh3.googleusercontent.com/-m8TxQMObg6c/U474EWu7Y9I/AAAAAAAAI2k/xkRGoIEC1iU/s1600/blur.jpg");
+  background-size: 100%;
+  background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(" ");
+  background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://lh3.googleusercontent.com/-m8TxQMObg6c/U474EWu7Y9I/AAAAAAAAI2k/xkRGoIEC1iU/s1600/blur.jpg");
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(" ");
+}
+.blurred-bg.shaded {
+  background-image: url(' '), url(" ");
+  background-size: 100%;
+  background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://lh3.googleusercontent.com/-m8TxQMObg6c/U474EWu7Y9I/AAAAAAAAI2k/xkRGoIEC1iU/s1600/blur.jpg");
+  background-image: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://lh3.googleusercontent.com/-m8TxQMObg6c/U474EWu7Y9I/AAAAAAAAI2k/xkRGoIEC1iU/s1600/blur.jpg");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://lh3.googleusercontent.com/-m8TxQMObg6c/U474EWu7Y9I/AAAAAAAAI2k/xkRGoIEC1iU/s1600/blur.jpg");
+}
+
+.boxx {
+  width: 280px;
+  height: 350px;
+  color: #fff;
+  left: -webkit-calc( 40% - 450px );
+  top: 20%;
+  position: absolute;
+  border-radius: 5px;
+  -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  display: flex;
+  transition: box-shadow .3s ease;
+}
+ 
+
+
+</style>
+<script>
+ 
+</script>
+
+
+ 
+<body>
+
+        <!-- partial:index.partial.html -->
+<div id="boxx1" class="boxx blurred-bg tinted">
+  <div class="content">
+    <h1 style="color:#0cff0c;">
+Algorithm Visualization </h1>
+	    <br>
+        
+
+        <p>Algorithm Visualizer is a combined platform that's a comprehensive result for educators and students to educate and learn online effectively. It substantially focuses on “algorithm visualization", which allows a better understanding of its inflow and operation." 
+        
+     
+  </div>
+</div>
+
+
+<!-- partial:index.partial.html -->
+<div class="box">
+  <div class="content">
+    <a  href="/"> <div class="tagbox">
+   <div class="tag tagafter" id="signup">
+        <h2 >Sign Up</h2>
+      </div>
+ <div class="tag" id="signin" >
+        <h2 >Sign In</h2>
+      </div> 
+    </div></a>
+    
+    
+    <form class="signup" action="/registration" method="post" >
+      <div class="input">
+      
+      
+        <h4>User Name</h4>
+        <input type="text" placeholder="Username" name="username" id="user" required/>
+      </div>
+      
+      
+       <div class="input">
+        <h4>E-MAIL</h4>
+        <input type="email" placeholder="Enter E-mail "  name="email" id="email"  required="required"/>
+      </div>
+      
+      
+      <div class="input">
+        <h4>Password</h4>
+        <input type="password" placeholder="Enter password" id="psw" name="password" required="required"/>
+      </div>
+      
+      
+      <div class="input">
+        <h4>Confirm Password</h4>
+        <input type="password" placeholder="Repeat Password" name="password-r" id="psw-repeat" required="required"/>
+      </div>
+     
+     <div class="agree">
+        <input type="checkbox" >
+        <p class="tran">Already have an account?</p><a class="sev" href="/">
+          <div class="bo_b">
+            <p>Login</p>
+          </div></a>
+      </div>
+        
+      <div class="submit">
+        <button type="submit"  class="registerbtn">Sign Up</button> 
+      </div>
+    </form>
+    
+  </div>
+
+  
+  
+  
+</div>
+ 
+ 
+ 
+</body>
+</html>
