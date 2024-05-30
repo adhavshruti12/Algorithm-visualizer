@@ -1,6 +1,6 @@
 # Algorithm Visualizer
 
-Algorithm Visualizer is a web application for visualizing various algorithms including sorting, pathfinding, graph, queue, and stack algorithms. This tool helps users understand the inner workings of these algorithms through interactive visual representations.
+Algorithm Visualizer is a web application for visualizing various algorithms including sorting, queue, and stack algorithms. This tool helps users understand the inner workings of these algorithms through interactive visual representations.
 
 ## Table of Contents
 
