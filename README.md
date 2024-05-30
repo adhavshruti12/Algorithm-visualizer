@@ -68,7 +68,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Contact
 If you have any questions, feel free to contact us at:
 - **Email:** adhavshruti12@gmail.com
-- **GitHub:** adhavshruti12/
+- **GitHub:** [adhavshruti12/](https://github.com/adhavshruti12)
     
 
 
